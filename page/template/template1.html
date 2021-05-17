@@ -1,0 +1,42 @@
+<div style="border-bottom: #e8eaed solid 1px;margin:20px auto auto 20px;padding-bottom: 10px">
+    <h1 style="font-size: 25px;line-height: 60px"> 人员管理</h1>
+    <span class="layui-breadcrumb">
+        <a href="/">首页</a>
+        <a href="/demo/">人员管理</a>
+        <a><cite>列表</cite></a>
+      </span>
+</div>
+
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-card">
+        <div class="layui-card-header" style="padding: 5px">
+            人员列表
+            <span style="float: right">
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" id="down">Excel导出</button>
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">添加新人员</button>
+            </span>
+        </div>
+        <div style="padding: 20px">
+            <label class="layui-form-label" style="padding: 0 15px">
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="height: 38px"><i
+                        class="layui-icon">&#xe669;刷新</i>
+                </button>
+            </label>
+
+            <div class="layui-input-block" style="position: relative">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+                       class="layui-input" style="width: 98%;">
+                <button type="button" class="layui-btn layui-btn-normal " style="position: absolute;right: 0;top: 0">
+                    搜索
+                </button>
+            </div>
+            <table class="layui-hide my_table" style="margin-left:50px!important;" id="person"
+                   lay-filter="person"></table>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="layui.js" charset="utf-8"></script>

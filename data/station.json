@@ -1,0 +1,49 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 6,
+  "data": [
+    {
+      "id": 1,
+      "name": "工位1",
+      "type":"工作工位",
+      "position":"示教数字话产线第1工位",
+      "state": "<i class='layui-icon' style='color: #45f16a;'>&#xe605;</i>"
+    },
+    {
+      "id": 2,
+      "name": "工位2",
+      "type":"工作工位",
+      "position":"示教数字话产线第2工位",
+      "state": "<i class='layui-icon' style='color: #45f16a;'>&#xe605;</i>"
+    },
+    {
+      "id": 3,
+      "name": "工位3",
+      "type":"工作工位",
+      "position":"示教数字话产线第3工位",
+      "state": "<i class='layui-icon' style='color: #45f16a;'>&#xe605;</i>"
+    },
+    {
+      "id": 4,
+      "name": "工位4",
+      "type":"工作工位",
+      "position":"示教数字话产线第4工位",
+      "state": "<i class='layui-icon' style='color: #45f16a;'>&#xe605;</i>"
+    },
+    {
+      "id": 5,
+      "name": "工位5",
+      "type":"工作工位",
+      "position":"示教数字话产线第5工位",
+      "state": "<i class='layui-icon' style='color: #45f16a;'>&#xe605;</i>"
+    },
+    {
+      "id": 6,
+      "name": "工位6",
+      "type":"工作工位",
+      "position":"示教数字话产线第6工位",
+      "state": "<i class='layui-icon' style='color: #45f16a;'>&#xe605;</i>"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+<style>
+    .form-item {
+        margin-top: 20px;
+        padding-bottom: 30px;
+        border-bottom: #bec0c3 dashed 1px;
+    }
+    .layui-input{
+        width: 80%;
+    }
+    .layui-form-label{
+        width:200px ;
+    }
+</style>
+<div style="border-bottom: #e8eaed solid 1px;margin:20px auto auto 20px;padding-bottom: 10px">
+    <h1 style="font-size: 25px;line-height: 60px"> 添加工序</h1>
+    <span class="layui-breadcrumb">
+        <a href="/">首页</a>
+        <a href="/demo/">工序管理</a>
+        <a><cite>添加工序</cite></a>
+      </span>
+</div>
+
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-card">
+        <div class="layui-card-header" style="padding: 5px;border-bottom: rgba(51,51,51,0.42) dashed 1px">
+            工序信息
+        </div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="">
+                <div class="form-item">
+                    <label class="layui-form-label">工号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请正确输入名称（必填）"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="form-item" style="width: 100%">
+                    <label class="layui-form-label">照片</label>
+                    <div class="layui-input-block" style="position: relative">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请选择照片"
+                               class="layui-input" style="width: 70%;">
+                        <button type="button" class="layui-btn layui-btn-normal " id="upload"
+                                style="position: absolute;right: 15%;top: 0">
+                            <i class="layui-icon">&#xe64a;</i>Browse...
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label class="layui-form-label">允许进行便签打印</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="name1" value="是" title="是" checked="">
+                        <input type="radio" name="name1" value="否" title="否">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="layui-form-label">收件输出限制</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="name2" value="是" title="是" checked="">
+                        <input type="radio" name="name2" value="否" title="否">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="layui-form-label">输出进行打印</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="name3" value="是" title="是" checked="">
+                        <input type="radio" name="name3" value="否" title="否">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="layui-form-label">工位输出对物料进行检查</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="name4" value="是" title="是" checked="">
+                        <input type="radio" name="name4" value="否" title="否">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="layui-form-label">分料自动下发任务</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="name5" value="是" title="是" checked="">
+                        <input type="radio" name="name5" value="否" title="否">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="layui-form-label">没有物料和前置工序自动下发任务</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="name6" value="是" title="是" checked="">
+                        <input type="radio" name="name6" value="否" title="否">
+                    </div>
+                </div>
+
+                <div class="form-item" style="margin-left: 100px">
+                    <button type="button" class="layui-btn layui-btn-normal">提交</button>
+                    <button type="button" class="layui-btn">取消</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="layui.js" charset="utf-8"></script>
+
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'upload'], function () {
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#date'
+        });
+
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#upload' //绑定元素
+            , url: uploadFile //上传接口
+            , done: function (res) {
+                //上传完毕回调
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+    });
+</script>

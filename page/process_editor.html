@@ -1,0 +1,44 @@
+<link rel='stylesheet' href='css/datainspector.css'/>
+<script src="js/go.js"></script>
+<script src="js/datainspector.js"></script>
+<script id="code" src="js/initNode.js"></script>
+
+<div style="border-bottom: #e8eaed solid 1px;margin:20px auto auto 20px;padding-bottom: 10px">
+    <h1 style="font-size: 25px;line-height: 60px"> 工艺路线图编辑器</h1>
+    <span class="layui-breadcrumb">
+        <a href="/">首页</a>
+        <a href="/demo/">工艺路线图编辑器</a>
+        <a><cite>编辑器</cite></a>
+      </span>
+</div>
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-card">
+        <div class="layui-card-header" style="padding: 5px">
+            工艺路线图编辑器
+            <span style="float: right">
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onClick="save()">保存</button>
+            </span>
+        </div>
+
+        <div id="sample">
+            <div style="width: 99%; display: flex; justify-content: space-between;float: left;margin-top: 10px">
+                <div id="myPaletteDiv"
+                     style="width: 100px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black"></div>
+                <div id="myDiagramDiv" style="flex-grow: 1; height: 500px; border: solid 1px black"></div>
+            </div>
+            <div id="myInspectorDiv" class="inspector" style="float: left;height:0px;width:0px;">
+            </div>
+            <textarea id="mySavedModel" placeholder="此处预留展示生成关系图的数据..." class="layui-textarea"
+                      style="margin-top: 80px;width: 99%"></textarea>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<script src="layui.js" charset="utf-8"></script>
+<script>
+    init()
+</script>

@@ -1,0 +1,181 @@
+<style>
+
+    td[data-field="5"] div:first-child {
+        height: 60px !important;
+    }
+
+</style>
+<div style="border-bottom: #e8eaed solid 1px;margin:20px auto auto 20px;padding-bottom: 10px">
+    <h1 style="font-size: 25px;line-height: 60px"> 人员管理</h1>
+    <span class="layui-breadcrumb">
+        <a href="/">首页</a>
+        <a href="/demo/">工位管理</a>
+        <a><cite>列表</cite></a>
+      </span>
+</div>
+
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-card">
+        <div class="layui-card-header" style="padding: 5px">
+            工位列表
+            <span style="float: right">
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" id="add">添加新工位</button>
+            </span>
+        </div>
+        <div style="padding: 20px">
+            <label class="layui-form-label" style="padding: 0 15px">
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="height: 38px"><i
+                        class="layui-icon">&#xe669;刷新</i>
+                </button>
+            </label>
+
+            <div class="layui-input-block" style="position: relative">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入设备类型名称"
+                       class="layui-input" style="width: 98%;">
+                <button type="button" class="layui-btn layui-btn-normal " style="position: absolute;right: 0;top: 0">
+                    搜索
+                </button>
+            </div>
+            <table class="layui-hide my_table" style="margin-left:50px!important;" id="equiType"
+                   lay-filter="equiType"></table>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="layui.js" charset="utf-8"></script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="repair" style="margin-top: 10px;padding-top: 5px;height: 38px;"> <input type="checkbox" name="switch" lay-skin="switch" checked>停用该工位</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit" style="margin-top: 10px;padding-top: 5px;height: 38px;">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" id="del" style="margin-top: 10px;padding-top: 5px;height: 38px;">删除</a>
+</script>
+<script>
+    layui.use(['table', 'layer', 'laydate'], function () {
+        var table = layui.table;
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        var laydate = layui.laydate;
+
+        table.render({
+            elem: '#equiType'
+            , url: stationUrl
+            , cellMinWidth: 60 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , page: {
+                curr: 1 //重新从第 1 页开始
+            }
+            , cols: [[
+                {field: 'id', width: 100, height: 100, title: '序号', sort: true}
+                , {field: 'name', width: 200, title: '名称'}
+                , {field: 'type', width: 200, title: '类型'}
+                , {field: 'state', width: 200, title: '工作状态'}
+                , {field: 'position', width: 250, title: '位置描述'}
+                , {fixed: 'right', title: '编辑', toolbar: '#barDemo', width: 500}
+            ]]
+        });
+
+        //监听行工具事件
+        table.on('tool(equiType)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'del') {
+                layer.confirm('是否删除ID为：' + data.id + "的这行？", function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                });
+            }
+        });
+
+
+        //监听头工具栏事件
+        table.on('toolbar(test)', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id)
+                , data = checkStatus.data; //获取选中的数据
+            switch (obj.event) {
+                case 'add':
+                    layer.msg('添加');
+                    break;
+                case 'update':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else if (data.length > 1) {
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        layer.alert('编辑 [id]：' + checkStatus.data[0].id);
+                    }
+                    break;
+                case 'delete':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else {
+                        layer.msg('删除');
+                    }
+                    break;
+            }
+            ;
+        });
+
+        function show() {
+            //示范一个公告层
+            layer.open({
+                type: 1
+                , title: false //不显示标题栏
+                , closeBtn: false
+                , area: '500px;'
+                , shade: 0.8
+                , id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                , btn: ['提交', '取消']
+                , btnAlign: 'c'
+                , moveType: 1 //拖拽模式，0或者1
+                , content: '<div >' +
+                    '        <div class="layui-card">\n' +
+                    '            <div class="layui-card-header" style="padding: 10px"><span style="font-size: 25px;color: deepskyblue">工位管理</span>' +
+                    '<br><span style="color:deepskyblue; font-weight: bold"> 工位管理/ 添加工位</span>' +
+                    '</div>\n' +
+                    '            <div class="layui-card-body">\n' +
+                    '<form class="layui-form" action="" style="margin-top: 30px">\n' +
+                    '  <div class="layui-form-item">\n' +
+                    '    <label class="layui-form-label">名称</label>\n' +
+                    '    <div class="layui-input-block">\n' +
+                    '      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="不得超过30个字符" class="layui-input">\n' +
+                    '    </div>\n' +
+                    '  </div>' +
+                    '  <div class="layui-form-item">\n' +
+                    '    <label class="layui-form-label">位置描述</label>\n' +
+                    '    <div class="layui-input-block">\n' +
+                    '      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="不得超过30个字符" class="layui-input">\n' +
+                    '    </div>\n' +
+                    '  </div>' +
+                    '  <div class="layui-form-item">\n' +
+                    '    <label class="layui-form-label">类型</label>' +
+                    '   <div class="layui-input-block">\n' +
+                    '      <select name="interest" lay-filter="aihao">\n' +
+                    '        <option value=""></option>\n' +
+                    '        <option value="0">工作工位</option>\n' +
+                    '        <option value="1" selected="">边线库工位</option>\n' +
+                    '      </select>\n' +
+                    '    </div>\n' +
+                    '  </div>' +
+                    '</form>' +
+                    '            </div>\n' +
+                    '        </div>' +
+                    '</div> <script src=\'layui.js\' charset=\'utf-8\'><\/script>'
+                , success: function (layero) {
+                    var btn = layero.find('.layui-layer-btn');
+                    btn.find('.layui-layer-btn0').click(function () {
+                        layer.msg('添加成功');
+                    });
+                    laydate.render({
+                        elem: '#date'
+                    });
+
+                }
+            });
+        }
+
+        $('#add').on('click', function () {
+            show()
+        });
+    });
+
+</script>

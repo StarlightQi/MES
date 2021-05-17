@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06aa026e-a67b-46e0-887f-7b35044da1f2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rcBmtHEjzZKA6MHkQixrNubXal" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/dialog" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Htms\MES\page\img\head" />
+      <recent name="D:\Work\Htms\MES\file" />
+      <recent name="D:\Work\Htms\MES" />
+      <recent name="D:\Work\Htms\MES\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\Htms\MES\data\dialog" />
+      <recent name="D:\Work\Htms\MES\test\js" />
+      <recent name="D:\Work\Htms\MES\js" />
+      <recent name="D:\Work\Htms\MES\css" />
+      <recent name="D:\Work\Htms\MES\test" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06aa026e-a67b-46e0-887f-7b35044da1f2" name="Default Changelist" comment="" />
+      <created>1619265659320</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619265659320</updated>
+      <workItem from="1619265661707" duration="11244000" />
+      <workItem from="1619322455096" duration="3536000" />
+      <workItem from="1619500316342" duration="280000" />
+      <workItem from="1619598234326" duration="4100000" />
+      <workItem from="1619612789615" duration="5116000" />
+      <workItem from="1619708878181" duration="3406000" />
+      <workItem from="1619740806361" duration="275000" />
+      <workItem from="1619777492717" duration="1477000" />
+      <workItem from="1620013211860" duration="3620000" />
+      <workItem from="1620049604092" duration="34600000" />
+      <workItem from="1620127803467" duration="4714000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

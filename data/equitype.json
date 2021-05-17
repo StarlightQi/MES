@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 6,
+  "data": [
+    {
+      "id": 1,
+      "typeName": "打印机"
+    },
+    {
+      "id": 2,
+      "typeName": "称重仪"
+    },
+    {
+      "id": 3,
+      "typeName": "转孔机"
+    },
+    {
+      "id": 4,
+      "typeName": "涂胶机"
+    },
+    {
+      "id": 5,
+      "typeName": "喷洒机"
+    },
+    {
+      "id": 6,
+      "typeName": "焊接机"
+    }
+  ]
+}

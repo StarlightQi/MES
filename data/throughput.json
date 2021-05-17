@@ -1,0 +1,55 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 8,
+  "data": [
+    {
+      "id": 1,
+      "name": "工位1",
+      "person":"无",
+      "equipment":"焊接机，喷涂机"
+    },
+    {
+      "id": 2,
+      "name": "工位2",
+      "person":"无",
+      "equipment":"涂胶机，砖孔机"
+    },
+    {
+      "id": 3,
+      "name": "工位3",
+      "person":"无",
+      "equipment":"无"
+    },
+    {
+      "id": 4,
+      "name": "工位4",
+      "person":"无",
+      "equipment":"称重仪"
+    },
+    {
+      "id": 5,
+      "name": "工位5",
+      "person":"无",
+      "equipment":"无"
+    },
+    {
+      "id": 6,
+      "name": "工位6",
+      "person":"无",
+      "equipment":"打印机"
+    },
+    {
+      "id": 7,
+      "name": "工位7",
+      "person":"无",
+      "equipment":"无"
+    },
+    {
+      "id": 8,
+      "name": "线边库",
+      "person":"无",
+      "equipment":"无"
+    }
+  ]
+}

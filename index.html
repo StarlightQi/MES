@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MES</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/layui.css" media="all">
+    <script src="js/url.js"></script>
+    <script src="js/basics.js"></script>
+    <style>
+        .layui-nav li {
+            float: right;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <ul class="layui-nav layui-bg-gray">
+        <li class="layui-nav-item">
+            <a href="">控制台</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">个人中心<span class="layui-badge-dot"></span></a>
+        </li>
+        <li class="layui-nav-item">
+            <a href=""><img src="page/img/head/7.jpg" class="layui-nav-img">陆</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:;"></a></dd>
+                <dd><a href="javascript:;"></a></dd>
+                <dd><a href="javascript:;"></a></dd>
+            </dl>
+        </li>
+        <div style="clear: both"></div>
+    </ul>
+</div>
+<div class="lvc-wrap" id="lvc-nav" style="float: left">
+    <ul class="lvc-nav">
+        <li class="nav-pic2 next-layer" title="人员管理1" page="list_person.html">
+            <a>人员管理</a>
+            <ol>
+                <li page="list_person.html">人员列表</li>
+                <li page="add_person.html" id="addP">添加人员</li>
+            </ol>
+        </li>
+        <li class="nav-pic3 next-layer" title="设备管理" page="type_equipment.html">
+            <a>设备管理</a>
+            <ol>
+                <li page="type_equipment.html">设备类型</li>
+                <li page="list_equipment.html">设备列表</li>
+            </ol>
+        </li>
+        <li class="nav-pic4" title="工位管理" page="list_station.html"><a>工位管理</a></li>
+        <li class="nav-pic5 next-layer" title="终端" page="list_pad.html">
+            <a>终端管理</a>
+            <ol>
+                <li page="list_pad.html">PAD管理</li>
+            </ol>
+        </li>
+        <li class="nav-pic6" title="物料管理" page="list_materiel.html"><a>物料管理</a></li>
+        <li class="nav-pic7" title="工位生产能力" page="throughput.html"><a>生产能力</a></li>
+        <li class="nav-pic8 next-layer" title="工序" page="list_procedure.html">
+            <a>工序管理</a>
+            <ol>
+                <li page="list_procedure.html">工序列表</li>
+                <li page="add_procedure.html" id="addG">添加工序</li>
+            </ol>
+        </li>
+        <li class="nav-pic9" title="工序工位管理" page="process_station.html"><a>工序工位</a></li>
+        <li class="nav-pic10 next-layer" title="生产工艺流程" page="process_route.html">
+            <a>生产工艺</a>
+            <ol>
+                <li page="process_route.html">工艺路线列表</li>
+                <li page="process_editor.html">工艺路线图编辑器</li>
+            </ol>
+        </li>
+        <li class="nav-pic11" title="生产线体" page="production_line.html"><a>生产线体</a></li>
+        <li class="nav-pic12" title="托盘管理" page="tray_management.html"><a>托盘管理</a></li>
+    </ul>
+    <button type="button" class="btn-nav"></button>
+
+</div>
+<div style="margin-left: 272px;height: 600px" id="main">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>系统介绍</legend>
+    </fieldset>
+    <blockquote class="layui-elem-quote layui-text">
+        该系统基于学校书籍样图构建<br>
+        系统名称：MES数据库管理系统<br>
+        作者：陆均琪<br>
+        学号：20181004016<br>
+        版本：1.1v<br>
+        完成时间：2021年5月4日20:29:19<br>
+        <span style="color: red">注意：</span> <span style="color: blue"> 本项目需要依托于服务器运行</span><br>
+        项目需要在服务器中运行，不然看得到数据的渲染效果<br>
+    </blockquote>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>系统说明</legend>
+    </fieldset>
+    <blockquote class="layui-elem-quote layui-text">
+        该系统，仅用于交流学习，和交作业，他人切勿以此提交作业<br>
+        盗版必究<br>
+        核心代码存于云端，防止他人修改<br>
+        查看是否为盗版代码方法：<br>
+        &emsp;&emsp;控制台：打印版权信息（云端代码，别人无法修改，修改则整个项目运行不起来）<br>
+        &emsp;&emsp;菜单：菜单显示作者信息<br>
+        &emsp;&emsp;每个页面底部显示学号<br>
+        &emsp;&emsp;专属log和独特的运行机制等<br>
+    </blockquote>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>项目结构说明</legend>
+    </fieldset>
+    <blockquote class="layui-elem-quote layui-text">
+        本系统采用，前后端分离架构进行开发，即后端提供对应格式的数据，即可时得整个页面，产生动态数据的展示效果；<br>
+        系统中，采用动态页面加载技术，实现了单页面系统，即整个项目的所有操作都在index.html 中进行<br>
+
+        目录结构：<br>
+        &emsp;&emsp;css-------样式表<br>
+        &emsp;&emsp;data------存放数据,是整个项目的运行数据的核心<br>
+        &emsp;&emsp;file------存放，项目中需要下载的文件<br>
+        &emsp;&emsp;font------存放字体图标等文件<br>
+        &emsp;&emsp;images----整个项目中需要用到的各种图片<br>
+        &emsp;&emsp;js--------一些公用的js文件<br>
+        &emsp;&emsp;page-------全部页面文件<br>
+        &emsp;&emsp;index.html-首页<br>
+        &emsp;&emsp;layui.js---核心开发技术<br>
+    </blockquote>
+    <script src="layui.js" charset="utf-8"></script>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //展开收起
+        $(".btn-nav").click(function () {
+            $(".lvc-wrap").toggleClass("lvc-close");
+            $("ol").toggleClass("small-ol");
+            $(".next-layer ol").hide();
+            if ($("#lvc-nav").hasClass('lvc-close')) {
+                $(".next-layer ").removeClass("arrow");
+                $("#main").css("margin-left", "90px");
+            } else {
+                $("#main").css("margin-left", "272px");
+            }
+        })
+
+        //选中状态
+        $(".lvc-nav li").click(function () {
+            thisPage = $(this).attr("page") + "";
+            parentPage = $(this).parent().parent().attr("page") + "";
+            $(this).siblings().find('ol').hide();
+            $(this).addClass("active").siblings().removeClass("active");
+            $("#main").load("page/" + $(this).attr("page"));
+            $(this).parent().parent().attr("page", thisPage);
+
+        })
+
+        //选中子集清除父级active
+        $("ol>li").click(function (e) {
+            console.log('ol>li clicked');
+            e.stopPropagation();
+            console.log(this);
+        })
+
+        //二级导航展开收起
+        $(".next-layer").click(function () {
+            $(this).children("ol").toggle();
+            $(this).toggleClass("arrow").siblings().removeClass("arrow")
+        })
+
+
+        $("ol li").click(function () {
+            if ($("ol").hasClass('small-ol')) {
+                $(".small-ol").hide();
+                $(this).parent().parent().addClass("active")
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<div style="border-bottom: #e8eaed solid 1px;margin:20px auto auto 20px;padding-bottom: 10px">
+    <h1 style="font-size: 25px;line-height: 60px"> 托盘管理</h1>
+    <span class="layui-breadcrumb">
+        <a href="/">首页</a>
+        <a href="/demo/">托盘列表</a>
+        <a><cite>列表</cite></a>
+      </span>
+</div>
+
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-card">
+        <div class="layui-card-header" style="padding: 5px">
+            托盘列表
+            <span style="float: right">
+         <span style="float: right">
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" id="down">Excel导出</button>
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" id="add">添加托盘</button>
+            </span>            </span>
+        </div>
+        <div style="padding: 20px">
+            <label class="layui-form-label" style="padding: 0 15px">
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="height: 38px"><i
+                        class="layui-icon">&#xe669;刷新</i>
+                </button>
+            </label>
+
+            <div class="layui-input-block" style="position: relative">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入托盘编号"
+                       class="layui-input" style="width: 98%;">
+                <button type="button" class="layui-btn layui-btn-normal " style="position: absolute;right: 0;top: 0">
+                    搜索
+                </button>
+            </div>
+            <table class="layui-hide my_table" style="margin-left:50px!important;" id="person"
+                   lay-filter="person"></table>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="layui.js" charset="utf-8"></script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" id="del">删除</a>
+</script>
+<script>
+    $("#down").click(function () {
+        try {
+            var elemIF = document.createElement("iframe");
+            elemIF.src = trayFile;
+            elemIF.style.display = "none";
+            document.body.appendChild(elemIF);
+        } catch (e) {
+            alert("下载异常！");
+        }
+    });
+
+    $("#add").click(function () {
+        layer.msg('待完善！');
+    });
+
+    layui.use('table', function () {
+        var table = layui.table;
+
+        table.render({
+            elem: '#person'
+            , url: trayeUrl
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,page: {
+                curr: 1 //重新从第 1 页开始
+            }
+            , cols: [[
+                {field: 'id', width: 200, height: 100, title: '序号', sort: true}
+                , {field: 'number', width: 250, title: '编号'}
+                , {field: 'T', width: 200, title: 'IP地址', sort: true}
+                , {field: 'state', width: 200, title: '登录状态'}
+                , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 300}
+            ]]
+        });
+
+
+        //监听行工具事件
+        table.on('tool(person)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'del') {
+                layer.confirm('是否删除ID为：' + data.id + "的这行？", function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                });
+            }
+        });
+
+
+        //监听头工具栏事件
+        table.on('toolbar(test)', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id)
+                , data = checkStatus.data; //获取选中的数据
+            switch (obj.event) {
+                case 'add':
+                    layer.msg('添加');
+                    break;
+                case 'update':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else if (data.length > 1) {
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        layer.alert('编辑 [id]：' + checkStatus.data[0].id);
+                    }
+                    break;
+                case 'delete':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else {
+                        layer.msg('删除');
+                    }
+                    break;
+            }
+            ;
+        });
+    });
+
+</script>

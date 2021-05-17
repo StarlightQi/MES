@@ -1,0 +1,71 @@
+{
+  "code": 0,
+  "msg": "",
+  "count":8 ,
+  "data": [
+    {
+      "id": 1,
+      "padName": "工位PAD1",
+      "IP": "192.168.4.30",
+      "login": "离线",
+      "station": "工位3",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 2,
+      "padName": "工位PAD2",
+      "IP": "192.168.4.34",
+      "login": "离线",
+      "station": "工位2",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 3,
+      "padName": "工位PAD3",
+      "IP": "10.22.1.86",
+      "login": "离线",
+      "station": "工位6",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 4,
+      "padName": "工位PAD4",
+      "IP": "10.22.1.93",
+      "login": "离线",
+      "station": "工位4",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 5,
+      "padName": "工位PAD5",
+      "IP": "10.22.1.96",
+      "login": "离线",
+      "station": "工位1",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 6,
+      "padName": "工位PAD6",
+      "IP": "10.22.1.92",
+      "login": "离线",
+      "station": "工位7",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 7,
+      "padName": "工位PAD7",
+      "IP": "192.168.4.29",
+      "login": "离线",
+      "station": "工位2",
+      "printIP": "192.168.4.27"
+    },
+    {
+      "id": 8,
+      "padName": "线边库PAD1",
+      "IP": "192.168.4.35",
+      "login": "离线",
+      "station": "边线库",
+      "printIP": "192.168.4.27"
+    }
+  ]
+}

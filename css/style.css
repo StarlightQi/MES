@@ -1,0 +1,293 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	min-width: 1000px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+a {
+    cursor: pointer;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.lvc-wrap {
+    position: relative;
+    width: 270px;
+}
+
+.lvc-wrap .btn-nav {
+    position: absolute;
+    left: 271px;
+    top: 40%;
+    width: 25px;
+    height: 93px;
+    border-style: none;
+    background: url("../images/nuv_03.png") no-repeat transparent;
+    outline: none;
+}
+
+.lvc-wrap .btn-nav:hover {
+    background-image: url("../images/nuv_03_hover.png")
+}
+
+.lvc-nav {
+    width: 100%;
+    padding-top: 20px;
+    border: 1px solid #e8eaed;
+    border-width: 0 1px 0 1px;
+}
+
+.lvc-nav li {
+    padding-left: 60px;
+    position: relative;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: left 30px top 15px;
+}
+
+.lvc-nav li a {
+    color: #a5a8ad;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+
+.lvc-nav li.active a {
+    color: #616366;
+}
+
+.lvc-nav li.active:before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #0d94ff;
+    left: 0;
+}
+
+.lvc-nav li.nav-pic1 {
+    background-image: url(../images/nav-pic1.png);
+}
+
+.lvc-nav li.nav-pic1.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic1-h.png);
+}
+
+.lvc-nav li.nav-pic2 {
+    background-image: url(../images/nav-pic2.png);
+}
+
+.lvc-nav li.nav-pic2.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic2-h.png);
+}
+
+.lvc-nav li.nav-pic3 {
+    background-image: url(../images/nav-pic3.png);
+}
+
+.lvc-nav li.nav-pic3.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic3-h.png);
+}
+
+.lvc-nav li.nav-pic4 {
+    background-image: url(../images/nav-pic4.png);
+}
+
+.lvc-nav li.nav-pic4.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic4-h.png);
+}
+
+.lvc-nav li.nav-pic5 {
+    background-image: url(../images/nav-pic5.png);
+}
+
+.lvc-nav li.nav-pic5.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic5-h.png);
+}
+
+.lvc-nav li.nav-pic6 {
+    background-image: url(../images/nav-pic6.png);
+}
+
+.lvc-nav li.nav-pic6.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic6-h.png);
+}
+
+.lvc-nav li.nav-pic7 {
+    background-image: url(../images/nav-pic7.png);
+}
+
+.lvc-nav li.nav-pic7.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic7-h.png);
+}
+
+.lvc-nav li.nav-pic8 {
+    background-image: url(../images/nav-pic8.png);
+}
+
+.lvc-nav li.nav-pic8.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic8-h.png);
+}
+
+.lvc-nav li.nav-pic9 {
+    background-image: url(../images/nav-pic9.png);
+}
+
+.lvc-nav li.nav-pic9.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic9-h.png);
+}
+
+.lvc-nav li.nav-pic10 {
+    background-image: url(../images/nav-pic10.png);
+}
+
+.lvc-nav li.nav-pic10.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic10-h.png);
+}
+
+.lvc-nav li.nav-pic11 {
+    background-image: url(../images/nav-pic11.png);
+}
+
+.lvc-nav li.nav-pic11.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic11-h.png);
+}
+
+.lvc-nav li.nav-pic12 {
+    background-image: url(../images/nav-pic12.png);
+}
+
+.lvc-nav li.nav-pic12.active {
+    background-color: #f4f6f8;
+    background-image: url(../images/nav-pic12-h.png);
+}
+
+/*子层 next-layer*/
+
+.lvc-nav li.next-layer.active:before {
+    height: 50px;
+}
+
+/*.lvc-nav li.next-layer:hover:before{
+	background-color: transparent;
+}*/
+.lvc-nav li.next-layer ol li.active {
+    color: #616366;
+    background-color: #f4f6f8;
+}
+
+.lvc-nav li.next-layer ol {
+    width: 270px;
+    margin-left: -60px;
+    display: none;
+    background-color: #fff;
+}
+
+.lvc-nav li.next-layer ol li {
+    height: 50px;
+    line-height: 50px;
+    color: #a5a8ad;
+    cursor: pointer;
+}
+
+.lvc-nav li.next-layer ol li:before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #919599;
+    left: 36px;
+    top: 23px;
+}
+
+.lvc-nav li.next-layer ol li.active:before {
+    background: #616366;
+}
+
+.lvc-nav li.next-layer ol li.active:after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #0d94ff;
+    left: 0;
+}
+
+.lvc-nav li.next-layer a {
+    background: url(../images/lvc-arrow-right.png) no-repeat right 10px center;
+}
+
+.lvc-nav li.next-layer.arrow a {
+    background: url(../images/lvc-arrow-bottom.png) no-repeat right 10px center;
+}
+
+
+/*收起nav*/
+.lvc-wrap.lvc-close {
+    width: 80px;
+}
+
+.lvc-close .lvc-nav li a {
+    display: none;
+}
+
+.lvc-close .btn-nav {
+    left: 81px;
+}
+
+.lvc-close .btn-nav {
+    background-image: url("../images/nuv_04.png")
+}
+
+.lvc-close .btn-nav:hover {
+    background-image: url("../images/nuv_04_hover.png")
+}
+
+.lvc-close .lvc-nav li {
+    height: 50px;
+    line-height: 50px;
+}
+
+
+.lvc-close li.next-layer ol {
+    background: #fff;
+    border: 1px solid #e8eaed;
+    width: auto;
+    position: absolute;
+    margin: 0;
+    margin-left: 20px;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.lvc-close li.next-layer ol li {
+    padding: 0 20px 0 40px;
+}
+
+.lvc-close li.next-layer ol li:before {
+    left: 20px;
+}
+
+.layui-nav-item a {
+    color: #a5a8ad !important;
+}
+
+
