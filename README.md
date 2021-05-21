@@ -42,50 +42,50 @@
 
    1. 人员列表
 
-      ![](1.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/1.png)
 
    2.  添加人员
 
-      ![](2.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/2.png)
 
    3.  设备类型
 
-      ![](3.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/3.png)
 
    4. 设备列表
 
-      ![](4.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/4.png)
 
    5. 工位管理
 
-      ![](5.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/5.png)
 
    6. PAD管理
 
-      ![](6.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/6.png)
 
    7. 物料管理
 
-      ![](8.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/8.png)
 
    8. 生成能力管理
 
-      ![](9.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/9.png)
 
    9. 添加工序
 
-      ![](10.png)
+      ![](https://github.com/liuxingzhumeng/MES/blob/master/show/10.png)
 
    10. 生产线体
 
-       ![](11.png)
+       ![](https://github.com/liuxingzhumeng/MES/blob/master/show/11.png)
 
    11. 工艺路线图编辑器
 
-       ![](12.png)
+       ![](https://github.com/liuxingzhumeng/MES/blob/master/show/12.png)
 
 
 
 4. MES 数据库ER分布图
 
-   ![](er.png)
+   ![](https://github.com/liuxingzhumeng/MES/blob/master/show/er.png)
